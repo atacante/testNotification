@@ -14,6 +14,8 @@ COPY . .
 
 RUN composer install
 
+RUN cp .env.example .env
+
 RUN php artisan key:generate
 
 CMD ["php", "artisan", "serve", "--host", "0.0.0.0"]
